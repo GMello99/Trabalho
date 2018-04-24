@@ -1,6 +1,9 @@
 
+import json
+with open('Estoque.txt','r') as arquivo:
+    estoque=json.loads(arquivo.read())
+
 controle_on = True 
-estoque = dict()
 while controle_on == True:
 	print ('Controle de estoque')
 	print ('0 - Sair')
@@ -38,3 +41,6 @@ while controle_on == True:
 	if opção == 4:
 		print (estoque)
 
+with open('Estoque.txt','w') as arquivo:
+    estoquefinal=json.dumps(estoque, sort_keys=True, indent=4)
+    arquivo.write(estoquefinal)
