@@ -59,7 +59,7 @@ finally:
                     print ('2 - Remover item')
                     print ('3 - Alterar item')
                     print ('4 - Imprimir estoque')
-                    print ('5 - Adicionar preço')
+                    print ('5 - Alterar preço')
                     print ('6 - Lista dos produtos negativos')
                     print ('7 - Imprimir valor total')
                     opção = int(input ('Faça sua escolha:'))
@@ -82,7 +82,7 @@ finally:
                                 else :
                                     lista.append(p)
                                 estoque[b] = lista
-                                print(estoque)
+                                
                     
                     if opção == 2:
                         c = input ('Nome do produto:')
@@ -98,17 +98,17 @@ finally:
                             e = int (input('Nova quantidade:'))
                             estoque [d] = (a+e)
                     if opção == 4:
-                        print (estoque)
+                        print ('O estoque é composto pelos produtos, quantida e preço, respectivamente: {0}'.format(estoque))
                     if opção == 5:
-                       k = input('nome do produto')
+                       k = input('nome do produto:')
                        if k not in estoque:
                            print('escolha um produto que esteja no estoque')
                        else :
-                           p = int(input('valor do produto:'))
+                           p = float(input('valor do produto:'))
                            if p < 0 : 
                                print('somente valor positivo')
                            else :
-                               p 
+                               estoque [k][1] = p 
                     
                     if opção == 6:
                         negativo = False
@@ -120,12 +120,12 @@ finally:
                         else:
                             for k, v in estoque.items():
                                 if v[0] < 0 :
-                                    print(k,v[0])
+                                    print('Os produtos que estão em quantidade negativa são: {0}'.format(k,v[0]))
                     if opção == 7:
                         soma_total =  0
                         for w in estoque.values():
                             soma_total += (w[1] * w[0])
-                        print(soma_total)
+                        print('O valor total dos produtos no estoque é:{0} '.format(soma_total))
                         
 #====================================================================================================================================
          if opção == 4:
