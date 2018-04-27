@@ -98,7 +98,9 @@ finally:
                             e = int (input('Nova quantidade:'))
                             estoque [d] = (a+e)
                     if opção == 4:
-                        print ('O estoque é composto pelos produtos, quantida e preço, respectivamente: {0}'.format(estoque))
+                        for e in estoque:
+                            o= estoque[e]
+                            print("{0}: {1} / {2} R$".format(e,o[0],o[1]))
                     if opção == 5:
                        k = input('nome do produto:')
                        if k not in estoque:
